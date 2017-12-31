@@ -1,0 +1,24 @@
+
+
+scrapy shell 'http://search.jd.com/Search?keyword=%E5%BD%A9%E7%94%B5&enc=utf-8' --nolog 
+
+view(response)
+
+<h3>item</h3>
+
+sel.xpath
+sel.css
+
+items = sel.css('.gl-item')
+SKU:
+items[0].css('li::attr("data-sku")')[0].extract()
+标题：
+items[0].css('.p-name a::attr("title")')[0].extract()
+items[1].css('.p-name a::attr("title")')[0].extract()
+价格：
+items[0].css('.p-price i::text')[0].extract()
+店铺：
+items[0].css('.p-shop a::text')[0].extract()
+
+
+https://sclub.jd.com/comment/productPageComments.action?productId=5871878&score=0&sortType=5&page=0&pageSize=10&isShadowSku=0&fold=1
